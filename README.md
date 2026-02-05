@@ -1,104 +1,124 @@
-💖 Journey of Love – Realistic Cycle Proposal
+# 💖 Journey of Love – Realistic Cycle Proposal
 
-Live demo: https://shinchanchan.github.io/Valentine-s-Day/
+| Item | Details |
+|------|--------|
+| 🌐 Live Demo | https://shinchanchan.github.io/Valentine-s-Day/ |
+| 🧑‍💻 Project Type | Interactive Romantic Web Experience |
+| 🛠 Tech Stack | HTML5, CSS3, Vanilla JavaScript |
+| 🎯 Purpose | Valentine / Love Proposal / Surprise |
+| 📱 Responsive | Yes (Mobile, Tablet, Desktop) |
+| 📦 Libraries | None (Pure Frontend) |
 
-An interactive romantic web experience built with pure HTML, CSS & JavaScript.
-Featuring a scenic ride, animated characters, heart effects, fireworks, and a playful proposal flow with WhatsApp integration.
+---
 
-🔗 Demo
+## ✨ Features
 
-👉 View the live experience here:
-https://shinchanchan.github.io/Valentine-s-Day/
+| Feature | Description |
+|--------|-------------|
+| 🚴 Cycle Animation | Realistic cycle movement with rotating wheels |
+| 💓 Heart Trail | Floating hearts following the cyclist |
+| 🌄 Scenic View | Sky, clouds, sun, mountains, road, trees |
+| 👦 Boy Character | Pedaling animation with expressions |
+| 👧 Girl Character | Idle animation, waving hand, speech bubble |
+| 💌 Proposal Popup | Romantic proposal overlay |
+| 📞 Phone Input | Country code + number validation |
+| 🫣 Funny No Button | Escapes when hovered |
+| 🎆 Fireworks | Canvas-based fireworks celebration |
+| 📱 WhatsApp | Auto message opening via WhatsApp |
 
-Watch the cyclist ride through the scene, meet the girl, and enjoy the romantic proposal flow.
+---
 
-✨ Features
+## 🛠 Technology Stack
 
-🚴 Realistic cycle animation with moving pedals and rotating wheels
+| Layer | Technology |
+|------|-----------|
+| Markup | HTML5 |
+| Styling | CSS3 (Animations, Gradients) |
+| Logic | JavaScript |
+| Effects | CSS + Canvas |
+| Messaging | WhatsApp Deep Link (`wa.me`) |
 
-🌄 Animated background: sky, drifting clouds, sun, mountains, ground
+---
 
-💞 Heart trail effects following the cyclist
+## 📂 Project Structure
 
-👦 Boy and 👧 girl characters with expressions and idle animations
+| File | Description |
+|------|------------|
+| `index.html` | Complete app (HTML + CSS + JS) |
+| `README.md` | Project documentation |
 
-💌 Proposal overlay with custom message and phone input
+---
 
-🫰 Playful “No” button that escapes
+## 🚀 How To Run
 
-🎆 Canvas fireworks celebration on acceptance
+### ▶ Run Locally
 
-📱 WhatsApp deep-link to send romantic message after “YES!”
+| Step | Action |
+|-----|--------|
+| 1 | Clone or download repository |
+| 2 | Open `index.html` |
+| 3 | Click **Begin Journey 🚴‍♂️** |
 
-🛠️ Tech Stack
+### 🌍 Run via GitHub Pages
 
-HTML5
+| Step | Action |
+|-----|--------|
+| 1 | Go to Repository Settings |
+| 2 | Open Pages |
+| 3 | Select `main` branch |
+| 4 | Select `/root` |
+| 5 | Save & open URL |
 
-CSS3 animations and effects
+---
 
-JavaScript logic & canvas fireworks
+## 🎯 User Flow
 
-No third-party libraries — pure vanilla frontend.
+| Step | Description |
+|-----|-------------|
+| 1 | Start screen appears |
+| 2 | User clicks Begin Journey |
+| 3 | Cyclist rides through scene |
+| 4 | Girl appears waiting |
+| 5 | Proposal popup opens |
+| 6 | Phone number entered |
+| 7 | YES / NO buttons shown |
+| 8 | YES → Fireworks |
+| 9 | WhatsApp message opens |
 
-🎯 How It Works
+---
 
-User lands on Start Screen
+## ⚙️ Customization
 
-Click “Begin Journey 🚴‍♂️”
+| Area | Can Change |
+|-----|------------|
+| 💬 Text | Proposal message |
+| 🎨 Colors | Background & buttons |
+| 🎵 Music | Add background audio |
+| 🧍 Characters | Replace with images/SVG |
+| 📱 Message | WhatsApp text |
 
-Cyclist rides across the screen with heart trail
+---
 
-Girl appears with speech bubble
+## ⚠️ Notes
 
-Proposal overlay opens
+| Item | Info |
+|-----|------|
+| 🔐 Data | No data stored |
+| 📞 Phone | Used only for WhatsApp |
+| 🌐 Browser | Chrome / Edge / Firefox |
+| ⚡ JS | Required |
 
-Enter phone number
+---
 
-Click YES 💍
+## 📜 License
 
-Fireworks and success screen
+| Type | License |
+|-----|---------|
+| 📄 License | MIT |
+| ✅ Usage | Free to use & modify |
 
-WhatsApp opens with pre-filled love message
+---
 
-🚀 How to Run Locally
-Option A — Local Browser
+## ❤️ Made With Love
 
-Clone repo
-
-Open index.html in any modern browser
-
-Option B — GitHub Pages
-
-Push to GitHub
-
-Enable Pages under Settings
-
-Select main branch → /root
-
-Browse your published site
-
-⚙️ Customization
-
-Make it uniquely yours:
-
-Change texts, colors, or emojis
-
-Add custom music
-
-Replace character assets (SVG or images)
-
-Modify love message sent via WhatsApp
-
-📌 Notes
-
-WhatsApp opens via https://wa.me/… deep linking
-
-Best experience in modern browsers with JavaScript enabled
-
-📝 License
-
-Licensed under MIT — free to use and share ❤️
-
-❤️ Made With Love
-
-Crafted to make a moment unforgettable — especially when someone says YES! 💕
+Crafted to turn a moment into a memory 💕
