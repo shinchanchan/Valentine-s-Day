@@ -1,0 +1,1414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Journey of Love - Realistic Cycle Proposal 💝</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(180deg, #87CEEB 0%, #E0F6FF 20%, #FFE4E1 60%, #FFB6C1 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Realistic Scene Container */
+        .scene-container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* Realistic Sky with Clouds */
+        .sky {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 60%;
+            background: linear-gradient(180deg, #4A90E2 0%, #87CEEB 50%, #E0F6FF 100%);
+            z-index: 1;
+        }
+
+        .cloud {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 100px;
+            filter: blur(1px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .cloud::before,
+        .cloud::after {
+            content: '';
+            position: absolute;
+            background: white;
+            border-radius: 100px;
+        }
+
+        .cloud1 {
+            width: 120px;
+            height: 40px;
+            top: 15%;
+            animation: drift 25s infinite linear;
+        }
+
+        .cloud1::before {
+            width: 50px;
+            height: 50px;
+            top: -25px;
+            left: 15px;
+        }
+
+        .cloud1::after {
+            width: 60px;
+            height: 40px;
+            top: -15px;
+            right: 15px;
+        }
+
+        .cloud2 {
+            width: 100px;
+            height: 35px;
+            top: 25%;
+            animation: drift 30s infinite linear;
+            animation-delay: -10s;
+        }
+
+        .cloud2::before {
+            width: 70px;
+            height: 45px;
+            top: -20px;
+            left: 20px;
+        }
+
+        @keyframes drift {
+            from { transform: translateX(-150px); }
+            to { transform: translateX(calc(100vw + 150px)); }
+        }
+
+        /* Realistic Sun */
+        .sun {
+            position: absolute;
+            top: 8%;
+            right: 15%;
+            width: 100px;
+            height: 100px;
+            background: radial-gradient(circle at 30% 30%, #FFD700, #FFA500, #FF6347);
+            border-radius: 50%;
+            box-shadow: 0 0 60px #FFD700, 0 0 100px #FFA500;
+            animation: sunPulse 4s infinite;
+            z-index: 2;
+        }
+
+        .sun::before {
+            content: '❤️';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 40px;
+            filter: drop-shadow(0 0 10px rgba(255,0,0,0.5));
+        }
+
+        @keyframes sunPulse {
+            0%, 100% { transform: scale(1); box-shadow: 0 0 60px #FFD700; }
+            50% { transform: scale(1.05); box-shadow: 0 0 80px #FFD700, 0 0 120px #FFA500; }
+        }
+
+        /* Mountains Background */
+        .mountains {
+            position: absolute;
+            bottom: 40%;
+            width: 100%;
+            height: 200px;
+            z-index: 2;
+        }
+
+        .mountain {
+            position: absolute;
+            bottom: 0;
+            width: 0;
+            height: 0;
+            border-style: solid;
+        }
+
+        .mountain1 {
+            left: 10%;
+            border-left: 150px solid transparent;
+            border-right: 150px solid transparent;
+            border-bottom: 200px solid #8B7D6B;
+        }
+
+        .mountain2 {
+            left: 40%;
+            border-left: 200px solid transparent;
+            border-right: 200px solid transparent;
+            border-bottom: 250px solid #A0522D;
+            z-index: 1;
+        }
+
+        .mountain3 {
+            right: 5%;
+            border-left: 180px solid transparent;
+            border-right: 180px solid transparent;
+            border-bottom: 180px solid #8B4513;
+        }
+
+        /* Ground with Texture */
+        .ground {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 40%;
+            background: linear-gradient(180deg, #90EE90 0%, #228B22 30%, #006400 100%);
+            z-index: 3;
+        }
+
+        .grass {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 30px;
+            background: repeating-linear-gradient(90deg, #32CD32 0px, #228B22 2px, #32CD32 4px);
+        }
+
+        /* Realistic Road */
+        .road {
+            position: absolute;
+            bottom: 10%;
+            width: 100%;
+            height: 100px;
+            background: linear-gradient(180deg, #505050 0%, #2F2F2F 100%);
+            z-index: 4;
+            perspective: 100px;
+        }
+
+        .road::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 5px;
+            background: #696969;
+        }
+
+        .road-line {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            height: 4px;
+            background: repeating-linear-gradient(90deg, white 0px, white 50px, transparent 50px, transparent 100px);
+            animation: roadMove 0.8s infinite linear;
+        }
+
+        @keyframes roadMove {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-100px); }
+        }
+
+        /* Scenery Elements */
+        .scenery {
+            position: absolute;
+            bottom: 40%;
+            width: 100%;
+            height: 100px;
+            z-index: 3;
+        }
+
+        .tree {
+            position: absolute;
+            font-size: 80px;
+            filter: drop-shadow(0 10px 10px rgba(0,0,0,0.2));
+            animation: sceneryMove 10s infinite linear;
+        }
+
+        .flower-patch {
+            position: absolute;
+            bottom: 0;
+            font-size: 40px;
+            animation: sceneryMove 8s infinite linear;
+        }
+
+        @keyframes sceneryMove {
+            0% { transform: translateX(100vw); }
+            100% { transform: translateX(-100px); }
+        }
+
+        /* Realistic Cyclist Boy */
+        .cyclist-container {
+            position: absolute;
+            bottom: 12%;
+            left: -300px;
+            z-index: 10;
+            animation: cycleRide 12s forwards ease-in-out;
+        }
+
+        @keyframes cycleRide {
+            0% { left: -300px; }
+            30% { left: 20%; }
+            70% { left: 20%; }
+            100% { left: 55%; }
+        }
+
+        /* Realistic Cycle SVG */
+        .cycle-wrapper {
+            position: relative;
+            width: 280px;
+            height: 200px;
+        }
+
+        .cycle-svg {
+            width: 100%;
+            height: 100%;
+            filter: drop-shadow(0 10px 20px rgba(0,0,0,0.3));
+        }
+
+        .wheel {
+            animation: wheelRotate 0.6s infinite linear;
+            transform-origin: center;
+        }
+
+        @keyframes wheelRotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Realistic Boy Character */
+        .boy-character {
+            position: absolute;
+            bottom: 60px;
+            left: 80px;
+            z-index: 5;
+        }
+
+        .boy-head {
+            width: 45px;
+            height: 55px;
+            background: linear-gradient(180deg, #FDBCB4 0%, #F4A460 100%);
+            border-radius: 50% 50% 45% 45%;
+            position: relative;
+            border: 2px solid #E6A08D;
+            box-shadow: inset -5px -5px 10px rgba(0,0,0,0.1);
+        }
+
+        /* Hair */
+        .boy-head::before {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 25px;
+            background: #2F1810;
+            border-radius: 50% 50% 20% 20%;
+        }
+
+        /* Face Features */
+        .face {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+        }
+
+        .eyes {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 8px;
+        }
+
+        .eye {
+            width: 6px;
+            height: 8px;
+            background: #333;
+            border-radius: 50%;
+            animation: blink 3s infinite;
+        }
+
+        @keyframes blink {
+            0%, 96%, 100% { transform: scaleY(1); }
+            98% { transform: scaleY(0.1); }
+        }
+
+        .smile {
+            width: 20px;
+            height: 10px;
+            border: 2px solid #C71585;
+            border-top: none;
+            border-radius: 0 0 20px 20px;
+            margin: 0 auto;
+        }
+
+        /* Blush */
+        .blush {
+            position: absolute;
+            top: 30px;
+            width: 8px;
+            height: 6px;
+            background: rgba(255, 105, 180, 0.4);
+            border-radius: 50%;
+        }
+
+        .blush.left { left: 5px; }
+        .blush.right { right: 5px; }
+
+        .boy-body {
+            width: 50px;
+            height: 70px;
+            background: linear-gradient(135deg, #4169E1 0%, #1E90FF 100%);
+            border-radius: 15px 15px 10px 10px;
+            margin-top: 5px;
+            margin-left: -2px;
+            position: relative;
+            box-shadow: inset -5px 0 10px rgba(0,0,0,0.2);
+        }
+
+        /* Arms with pedaling animation */
+        .arm {
+            position: absolute;
+            width: 35px;
+            height: 12px;
+            background: linear-gradient(90deg, #FDBCB4 0%, #F4A460 100%);
+            border-radius: 6px;
+            top: 15px;
+            transform-origin: left center;
+            border: 1px solid #E6A08D;
+        }
+
+        .arm.right {
+            right: -30px;
+            animation: pedalArm 0.6s infinite linear;
+        }
+
+        .arm.left {
+            left: -5px;
+            animation: pedalArm 0.6s infinite linear;
+            animation-delay: 0.3s;
+            z-index: -1;
+        }
+
+        @keyframes pedalArm {
+            0%, 100% { transform: rotate(30deg); }
+            50% { transform: rotate(-10deg); }
+        }
+
+        /* Hands */
+        .hand {
+            position: absolute;
+            right: -5px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 12px;
+            height: 12px;
+            background: #FDBCB4;
+            border-radius: 50%;
+            border: 1px solid #E6A08D;
+        }
+
+        /* Legs with pedaling */
+        .leg {
+            position: absolute;
+            width: 14px;
+            height: 50px;
+            background: linear-gradient(180deg, #191970 0%, #000080 100%);
+            border-radius: 7px;
+            bottom: -40px;
+            transform-origin: top center;
+            border: 1px solid #000;
+        }
+
+        .leg.right {
+            right: 8px;
+            animation: pedalLeg 0.6s infinite linear;
+        }
+
+        .leg.left {
+            left: 8px;
+            animation: pedalLeg 0.6s infinite linear;
+            animation-delay: 0.3s;
+            z-index: -1;
+        }
+
+        @keyframes pedalLeg {
+            0%, 100% { transform: rotate(20deg); }
+            50% { transform: rotate(-30deg); }
+        }
+
+        /* Shoes */
+        .shoe {
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 10px;
+            background: #333;
+            border-radius: 5px 5px 0 0;
+        }
+
+        /* Heart Trail Effect */
+        .heart-trail {
+            position: absolute;
+            bottom: 80px;
+            left: 0;
+            pointer-events: none;
+        }
+
+        .floating-heart {
+            position: absolute;
+            font-size: 24px;
+            animation: heartFloat 2s forwards;
+            filter: drop-shadow(0 0 10px rgba(255,20,147,0.6));
+        }
+
+        @keyframes heartFloat {
+            0% { 
+                transform: translate(0, 0) scale(0) rotate(0deg); 
+                opacity: 1; 
+            }
+            50% { opacity: 0.8; }
+            100% { 
+                transform: translate(-80px, -120px) scale(1.2) rotate(20deg); 
+                opacity: 0; 
+            }
+        }
+
+        /* Realistic Girl Character */
+        .girl-container {
+            position: absolute;
+            bottom: 12%;
+            right: 15%;
+            z-index: 10;
+            opacity: 0;
+            animation: girlAppear 12s forwards;
+            animation-delay: 10s;
+        }
+
+        @keyframes girlAppear {
+            0% { opacity: 0; transform: translateX(100px) scale(0.8); }
+            100% { opacity: 1; transform: translateX(0) scale(1); }
+        }
+
+        .girl-character {
+            position: relative;
+            width: 120px;
+            height: 220px;
+        }
+
+        .girl-head {
+            width: 50px;
+            height: 60px;
+            background: linear-gradient(180deg, #FDBCB4 0%, #F4A460 100%);
+            border-radius: 50% 50% 45% 45%;
+            margin: 0 auto;
+            position: relative;
+            border: 2px solid #E6A08D;
+            box-shadow: inset -5px -5px 10px rgba(0,0,0,0.1);
+            animation: girlIdle 2s infinite ease-in-out;
+        }
+
+        @keyframes girlIdle {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+
+        /* Girl Hair */
+        .girl-head::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 70px;
+            background: linear-gradient(180deg, #2F1810 0%, #4A3728 100%);
+            border-radius: 50% 50% 30% 30%;
+            z-index: -1;
+        }
+
+        .hair-flow {
+            position: absolute;
+            top: 20px;
+            right: -15px;
+            width: 30px;
+            height: 80px;
+            background: linear-gradient(180deg, #4A3728 0%, #2F1810 100%);
+            border-radius: 0 50% 50% 0;
+            animation: hairWave 2s infinite ease-in-out;
+        }
+
+        @keyframes hairWave {
+            0%, 100% { transform: rotate(0deg); }
+            50% { transform: rotate(5deg); }
+        }
+
+        /* Girl Face */
+        .girl-face {
+            position: absolute;
+            top: 25px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+        }
+
+        .girl-eyes {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .girl-eye {
+            width: 7px;
+            height: 9px;
+            background: #333;
+            border-radius: 50%;
+            position: relative;
+        }
+
+        .girl-eye::after {
+            content: '';
+            position: absolute;
+            top: 2px;
+            right: 2px;
+            width: 3px;
+            height: 3px;
+            background: white;
+            border-radius: 50%;
+        }
+
+        .girl-smile {
+            width: 25px;
+            height: 12px;
+            border: 2px solid #DC143C;
+            border-top: none;
+            border-radius: 0 0 25px 25px;
+            margin: 0 auto;
+            background: linear-gradient(180deg, transparent 50%, rgba(220,20,60,0.2) 100%);
+        }
+
+        .girl-blush {
+            position: absolute;
+            top: 35px;
+            width: 10px;
+            height: 8px;
+            background: rgba(255, 105, 180, 0.5);
+            border-radius: 50%;
+        }
+
+        .girl-blush.left { left: 3px; }
+        .girl-blush.right { right: 3px; }
+
+        /* Girl Body/Dress */
+        .girl-body {
+            width: 70px;
+            height: 100px;
+            background: linear-gradient(180deg, #FF1493 0%, #C71585 50%, #8B008B 100%);
+            margin: 5px auto 0;
+            border-radius: 20px 20px 40px 40px;
+            position: relative;
+            box-shadow: inset -10px 0 20px rgba(0,0,0,0.2);
+        }
+
+        /* Dress details */
+        .dress-fold {
+            position: absolute;
+            width: 100%;
+            height: 20px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+        }
+
+        .dress-fold:nth-child(1) { top: 30%; }
+        .dress-fold:nth-child(2) { top: 60%; }
+
+        /* Girl Arms */
+        .girl-arm {
+            position: absolute;
+            width: 15px;
+            height: 60px;
+            background: linear-gradient(180deg, #FDBCB4 0%, #F4A460 100%);
+            border-radius: 8px;
+            top: 10px;
+        }
+
+        .girl-arm.left {
+            left: -10px;
+            transform: rotate(10deg);
+            transform-origin: top;
+            animation: waveHand 2s infinite ease-in-out;
+        }
+
+        @keyframes waveHand {
+            0%, 100% { transform: rotate(10deg); }
+            50% { transform: rotate(30deg); }
+        }
+
+        .girl-arm.right {
+            right: -10px;
+            transform: rotate(-10deg);
+        }
+
+        /* Holding phone */
+        .phone {
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 35px;
+            background: #333;
+            border-radius: 3px;
+            border: 2px solid #666;
+        }
+
+        .phone::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 16px;
+            height: 28px;
+            background: linear-gradient(180deg, #87CEEB 0%, #E0F6FF 100%);
+            border-radius: 2px;
+        }
+
+        /* Girl Legs */
+        .girl-legs {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: -5px;
+        }
+
+        .girl-leg {
+            width: 12px;
+            height: 50px;
+            background: linear-gradient(180deg, #FDBCB4 0%, #F4A460 100%);
+            border-radius: 6px;
+        }
+
+        .girl-shoe {
+            width: 16px;
+            height: 10px;
+            background: linear-gradient(180deg, #FF1493 0%, #C71585 100%);
+            border-radius: 8px 8px 0 0;
+            margin-top: -5px;
+            margin-left: -2px;
+        }
+
+        /* Speech Bubble */
+        .speech-bubble {
+            position: absolute;
+            top: -60px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: white;
+            padding: 15px 25px;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.3em;
+            color: #FF1493;
+            white-space: nowrap;
+            animation: bubbleFloat 2s infinite ease-in-out;
+        }
+
+        .speech-bubble::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-top: 10px solid white;
+        }
+
+        @keyframes bubbleFloat {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(-10px); }
+        }
+
+        /* Proposal Overlay */
+        .proposal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 100;
+            backdrop-filter: blur(15px);
+        }
+
+        .proposal-card {
+            background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(255,228,225,0.95) 100%);
+            padding: 50px;
+            border-radius: 30px;
+            text-align: center;
+            max-width: 600px;
+            width: 90%;
+            box-shadow: 0 25px 80px rgba(255, 20, 147, 0.4);
+            border: 3px solid rgba(255, 105, 180, 0.5);
+            position: relative;
+            animation: cardEntry 1s ease-out;
+        }
+
+        @keyframes cardEntry {
+            0% { transform: scale(0) rotate(-5deg); opacity: 0; }
+            100% { transform: scale(1) rotate(0); opacity: 1; }
+        }
+
+        .proposal-header {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3em;
+            color: #FF1493;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .proposal-subtitle {
+            color: #8B008B;
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+
+        .big-heart {
+            font-size: 120px;
+            animation: heartbeat 1.2s infinite;
+            margin: 20px 0;
+            filter: drop-shadow(0 0 30px rgba(255,20,147,0.6));
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            25% { transform: scale(1.15); }
+            50% { transform: scale(1); }
+            75% { transform: scale(1.08); }
+        }
+
+        /* Phone Input Section */
+        .phone-section {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 30px;
+            border-radius: 20px;
+            margin: 30px 0;
+            border: 2px solid rgba(255, 105, 180, 0.3);
+        }
+
+        .phone-label {
+            color: #8B008B;
+            font-size: 1.1em;
+            margin-bottom: 15px;
+            display: block;
+            font-weight: 600;
+        }
+
+        .phone-input-wrapper {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .country-code {
+            padding: 15px 20px;
+            border: 2px solid #FFB6C1;
+            border-radius: 15px;
+            font-size: 1.1em;
+            background: white;
+            color: #8B008B;
+            font-weight: bold;
+        }
+
+        .phone-input {
+            padding: 15px 25px;
+            border: 2px solid #FFB6C1;
+            border-radius: 15px;
+            font-size: 1.2em;
+            width: 250px;
+            text-align: center;
+            outline: none;
+            transition: all 0.3s;
+        }
+
+        .phone-input:focus {
+            border-color: #FF1493;
+            box-shadow: 0 0 15px rgba(255, 20, 147, 0.3);
+        }
+
+        .btn-propose {
+            margin-top: 20px;
+            padding: 18px 50px;
+            font-size: 1.3em;
+            background: linear-gradient(135deg, #FF1493 0%, #FF69B4 100%);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: bold;
+            box-shadow: 0 10px 30px rgba(255, 20, 147, 0.4);
+            transition: all 0.3s;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .btn-propose:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(255, 20, 147, 0.6);
+        }
+
+        /* Button Container for Yes/No */
+        .response-buttons {
+            display: none;
+            gap: 25px;
+            justify-content: center;
+            margin-top: 30px;
+            position: relative;
+            height: 80px;
+        }
+
+        .btn-response {
+            padding: 18px 50px;
+            font-size: 1.4em;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .btn-yes {
+            background: linear-gradient(135deg, #FF1493 0%, #C71585 100%);
+            color: white;
+            box-shadow: 0 10px 30px rgba(255, 20, 147, 0.4);
+        }
+
+        .btn-yes:hover {
+            transform: scale(1.1) translateY(-5px);
+            box-shadow: 0 20px 50px rgba(255, 20, 147, 0.6);
+        }
+
+        .btn-no {
+            background: linear-gradient(135deg, #FFB6C1 0%, #FFC0CB 100%);
+            color: #8B008B;
+            box-shadow: 0 10px 30px rgba(255, 182, 193, 0.4);
+            position: absolute;
+        }
+
+        /* Success Screen */
+        .success-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255,228,225,0.95) 0%, rgba(255,182,193,0.95) 100%);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 200;
+            flex-direction: column;
+        }
+
+        .success-content {
+            text-align: center;
+            animation: successBounce 1s ease;
+        }
+
+        @keyframes successBounce {
+            0% { transform: scale(0); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        .success-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 4em;
+            color: #FF1493;
+            margin-bottom: 20px;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.2);
+        }
+
+        .success-message {
+            font-size: 1.5em;
+            color: #8B008B;
+            margin-bottom: 30px;
+        }
+
+        .couple-emoji {
+            font-size: 100px;
+            margin: 20px 0;
+            animation: coupleFloat 3s infinite ease-in-out;
+        }
+
+        @keyframes coupleFloat {
+            0%, 100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-20px) scale(1.1); }
+        }
+
+        /* Fireworks Canvas */
+        #fireworks-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 150;
+        }
+
+        /* Start Screen */
+        .start-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            transition: opacity 0.8s;
+        }
+
+        .start-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 4em;
+            color: white;
+            margin-bottom: 20px;
+            text-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            text-align: center;
+        }
+
+        .start-subtitle {
+            color: rgba(255,255,255,0.9);
+            font-size: 1.3em;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .start-btn {
+            padding: 20px 60px;
+            font-size: 1.5em;
+            background: white;
+            color: #764ba2;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: bold;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            transition: all 0.3s;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .start-btn:hover {
+            transform: scale(1.1) translateY(-5px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .cyclist-container { transform: scale(0.6); bottom: 8%; }
+            .girl-container { right: 5%; transform: scale(0.7); bottom: 8%; }
+            .proposal-header { font-size: 2em; }
+            .big-heart { font-size: 80px; }
+            .start-title { font-size: 2.5em; }
+        }
+    </style>
+<base target="_blank">
+</head>
+<body>
+
+    <!-- Start Screen -->
+    <div class="start-screen" id="startScreen">
+        <h1 class="start-title">Journey of Love</h1>
+        <p class="start-subtitle">Watch the magical cycle ride to forever... 💕</p>
+        <button class="start-btn" onclick="startJourney()">Begin Journey 🚴‍♂️</button>
+    </div>
+
+    <!-- Main Scene -->
+    <div class="scene-container" id="mainScene" style="display: none;">
+        <!-- Background -->
+        <div class="sky"></div>
+        <div class="cloud cloud1"></div>
+        <div class="cloud cloud2"></div>
+        <div class="sun"></div>
+        
+        <!-- Mountains -->
+        <div class="mountains">
+            <div class="mountain mountain1"></div>
+            <div class="mountain mountain2"></div>
+            <div class="mountain mountain3"></div>
+        </div>
+
+        <!-- Ground -->
+        <div class="ground">
+            <div class="grass"></div>
+        </div>
+
+        <!-- Road -->
+        <div class="road">
+            <div class="road-line"></div>
+        </div>
+
+        <!-- Scenery -->
+        <div class="scenery">
+            <div class="tree tree1">🌳</div>
+            <div class="flower-patch" style="animation-delay: 3s;">🌻🌷🌹</div>
+        </div>
+
+        <!-- Cyclist Boy -->
+        <div class="cyclist-container" id="cyclist">
+            <div class="heart-trail" id="heartTrail"></div>
+            <div class="cycle-wrapper">
+                <!-- SVG Cycle -->
+                <svg class="cycle-svg" viewBox="0 0 280 200">
+                    <!-- Back Wheel -->
+                    <g class="wheel" style="transform-origin: 60px 140px;">
+                        <circle cx="60" cy="140" r="45" fill="none" stroke="#333" stroke-width="4"/>
+                        <circle cx="60" cy="140" r="40" fill="none" stroke="#666" stroke-width="2"/>
+                        <line x1="60" y1="95" x2="60" y2="185" stroke="#333" stroke-width="2"/>
+                        <line x1="15" y1="140" x2="105" y2="140" stroke="#333" stroke-width="2"/>
+                        <line x1="28" y1="108" x2="92" y2="172" stroke="#333" stroke-width="2"/>
+                        <line x1="92" y1="108" x2="28" y2="172" stroke="#333" stroke-width="2"/>
+                    </g>
+                    
+                    <!-- Front Wheel -->
+                    <g class="wheel" style="transform-origin: 220px 140px;">
+                        <circle cx="220" cy="140" r="45" fill="none" stroke="#333" stroke-width="4"/>
+                        <circle cx="220" cy="140" r="40" fill="none" stroke="#666" stroke-width="2"/>
+                        <line x1="220" y1="95" x2="220" y2="185" stroke="#333" stroke-width="2"/>
+                        <line x1="175" y1="140" x2="265" y2="140" stroke="#333" stroke-width="2"/>
+                        <line x1="188" y1="108" x2="252" y2="172" stroke="#333" stroke-width="2"/>
+                        <line x1="252" y1="108" x2="188" y2="172" stroke="#333" stroke-width="2"/>
+                    </g>
+                    
+                    <!-- Frame -->
+                    <path d="M 60 140 L 120 140 L 100 80 L 60 140" fill="none" stroke="#FF6347" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M 100 80 L 180 80 L 220 140" fill="none" stroke="#FF6347" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M 120 140 L 140 100 L 180 80" fill="none" stroke="#FF6347" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                    
+                    <!-- Chain -->
+                    <circle cx="120" cy="140" r="10" fill="none" stroke="#333" stroke-width="3"/>
+                    
+                    <!-- Seat -->
+                    <path d="M 85 80 L 115 80 L 110 70 L 90 70 Z" fill="#8B4513"/>
+                    <line x1="100" y1="70" x2="100" y2="80" stroke="#666" stroke-width="3"/>
+                    
+                    <!-- Handlebar -->
+                    <path d="M 180 80 L 190 60 L 210 55" fill="none" stroke="#333" stroke-width="4" stroke-linecap="round"/>
+                    <circle cx="210" cy="55" r="4" fill="#333"/>
+                </svg>
+
+                <!-- Boy Character -->
+                <div class="boy-character">
+                    <div class="boy-head">
+                        <div class="face">
+                            <div class="eyes">
+                                <div class="eye"></div>
+                                <div class="eye"></div>
+                            </div>
+                            <div class="smile"></div>
+                        </div>
+                        <div class="blush left"></div>
+                        <div class="blush right"></div>
+                    </div>
+                    <div class="boy-body">
+                        <div class="arm right"><div class="hand"></div></div>
+                        <div class="arm left"><div class="hand"></div></div>
+                        <div class="leg right"><div class="shoe"></div></div>
+                        <div class="leg left"><div class="shoe"></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Girl Character -->
+        <div class="girl-container" id="girl">
+            <div class="girl-character">
+                <div class="speech-bubble">Waiting for you... 💕</div>
+                <div class="girl-head">
+                    <div class="hair-flow"></div>
+                    <div class="girl-face">
+                        <div class="girl-eyes">
+                            <div class="girl-eye"></div>
+                            <div class="girl-eye"></div>
+                        </div>
+                        <div class="girl-smile"></div>
+                    </div>
+                    <div class="girl-blush left"></div>
+                    <div class="girl-blush right"></div>
+                </div>
+                <div class="girl-body">
+                    <div class="dress-fold"></div>
+                    <div class="dress-fold"></div>
+                    <div class="girl-arm left">
+                        <div class="phone"></div>
+                    </div>
+                    <div class="girl-arm right"></div>
+                </div>
+                <div class="girl-legs">
+                    <div class="girl-leg">
+                        <div class="girl-shoe"></div>
+                    </div>
+                    <div class="girl-leg">
+                        <div class="girl-shoe"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Proposal Overlay -->
+    <div class="proposal-overlay" id="proposalOverlay">
+        <div class="proposal-card">
+            <h2 class="proposal-header">I Rode Miles For You</h2>
+            <p class="proposal-subtitle">My heart led me to your doorstep</p>
+            
+            <div class="big-heart">💖</div>
+            
+            <div class="phone-section" id="phoneSection">
+                <label class="phone-label">Enter Your Number To Begin Our Story</label>
+                <div class="phone-input-wrapper">
+                    <select class="country-code" id="countryCode">
+                        <option value="+1">+1 🇺🇸</option>
+                        <option value="+91">+91 🇮🇳</option>
+                        <option value="+44">+44 🇬🇧</option>
+                        <option value="+61">+61 🇦🇺</option>
+                        <option value="+81">+81 🇯🇵</option>
+                        <option value="+86">+86 🇨🇳</option>
+                        <option value="+49">+49 🇩🇪</option>
+                        <option value="+33">+33 🇫🇷</option>
+                    </select>
+                    <input type="tel" class="phone-input" id="phoneNumber" placeholder="Enter your number" maxlength="15">
+                </div>
+                <button class="btn-propose" onclick="submitNumber()">Send My Love 💌</button>
+            </div>
+
+            <div class="response-buttons" id="responseButtons">
+                <button class="btn-response btn-yes" onclick="sayYes()">YES, I Do! 💍</button>
+                <button class="btn-response btn-no" id="noBtn" onmouseover="escapeNo()">No 💔</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Screen -->
+    <div class="success-overlay" id="successOverlay">
+        <div class="success-content">
+            <div class="couple-emoji">👩‍❤️‍👨</div>
+            <h1 class="success-title">She Said YES!</h1>
+            <p class="success-message">Our journey of love begins now...<br>Together forever! 💕</p>
+            <div style="font-size: 50px; margin-top: 20px;">🌹💍🎉</div>
+        </div>
+    </div>
+
+    <!-- Fireworks Canvas -->
+    <canvas id="fireworks-canvas"></canvas>
+
+    <script>
+        // Start Journey
+        function startJourney() {
+            document.getElementById('startScreen').style.opacity = '0';
+            setTimeout(() => {
+                document.getElementById('startScreen').style.display = 'none';
+                document.getElementById('mainScene').style.display = 'block';
+                startAnimation();
+            }, 800);
+        }
+
+        // Create Heart Trail
+        function createHeart() {
+            const trail = document.getElementById('heartTrail');
+            const heart = document.createElement('div');
+            heart.className = 'floating-heart';
+            heart.innerHTML = ['💕', '💖', '💗', '💓', '💝'][Math.floor(Math.random() * 5)];
+            heart.style.left = Math.random() * 20 + 'px';
+            heart.style.bottom = Math.random() * 30 + 'px';
+            heart.style.fontSize = (Math.random() * 10 + 20) + 'px';
+            trail.appendChild(heart);
+            
+            setTimeout(() => heart.remove(), 2000);
+        }
+
+        // Start Animation Sequence
+        function startAnimation() {
+            // Create heart trail
+            const heartInterval = setInterval(createHeart, 250);
+
+            // Show proposal after arrival
+            setTimeout(() => {
+                clearInterval(heartInterval);
+                showProposal();
+            }, 12000);
+        }
+
+        // Show Proposal
+        function showProposal() {
+            document.getElementById('proposalOverlay').style.display = 'flex';
+            launchFireworks();
+        }
+
+        // Submit Phone Number
+        function submitNumber() {
+            const code = document.getElementById('countryCode').value;
+            const number = document.getElementById('phoneNumber').value.trim();
+            
+            if (!number || number.length < 10) {
+                alert('Please enter a valid phone number! 📱');
+                return;
+            }
+
+            // Hide phone section, show yes/no buttons
+            document.getElementById('phoneSection').style.display = 'none';
+            document.getElementById('responseButtons').style.display = 'flex';
+            
+            // Store for WhatsApp
+            window.whatsappNumber = code + number.replace(/\D/g, '');
+        }
+
+        // Escape No Button
+        function escapeNo() {
+            const noBtn = document.getElementById('noBtn');
+            const container = document.querySelector('.response-buttons');
+            const rect = container.getBoundingClientRect();
+            
+            const maxX = rect.width - noBtn.offsetWidth;
+            const maxY = 60;
+            
+            noBtn.style.left = Math.random() * maxX + 'px';
+            noBtn.style.top = Math.random() * maxY + 'px';
+        }
+
+        // Say Yes
+        function sayYes() {
+            document.getElementById('proposalOverlay').style.display = 'none';
+            document.getElementById('successOverlay').style.display = 'flex';
+            
+            // Launch celebration
+            celebrate();
+            
+            // Open WhatsApp after delay
+            if (window.whatsappNumber) {
+                setTimeout(() => {
+                    const message = encodeURIComponent("YES! I will be your forever! 💕🌹💍 You cycling all this way for me is the most romantic thing ever! I love you! ❤️");
+                    window.open(`https://wa.me/${window.whatsappNumber}?text=${message}`, '_blank');
+                }, 3000);
+            }
+        }
+
+        // Fireworks System
+        class Fireworks {
+            constructor() {
+                this.canvas = document.getElementById('fireworks-canvas');
+                this.ctx = this.canvas.getContext('2d');
+                this.particles = [];
+                this.resize();
+                window.addEventListener('resize', () => this.resize());
+                this.animate();
+            }
+
+            resize() {
+                this.canvas.width = window.innerWidth;
+                this.canvas.height = window.innerHeight;
+            }
+
+            createExplosion(x, y, color) {
+                const colors = color ? [color] : ['#FF1493', '#FF69B4', '#FFD700', '#FF6347', '#00CED1', '#9370DB'];
+                for (let i = 0; i < 60; i++) {
+                    const angle = (Math.PI * 2 * i) / 60;
+                    const velocity = Math.random() * 6 + 2;
+                    this.particles.push({
+                        x, y,
+                        vx: Math.cos(angle) * velocity,
+                        vy: Math.sin(angle) * velocity,
+                        life: 100,
+                        color: colors[Math.floor(Math.random() * colors.length)],
+                        size: Math.random() * 5 + 2,
+                        decay: Math.random() * 0.02 + 0.98
+                    });
+                }
+            }
+
+            animate() {
+                this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+                
+                for (let i = this.particles.length - 1; i >= 0; i--) {
+                    const p = this.particles[i];
+                    p.x += p.vx;
+                    p.y += p.vy;
+                    p.vy += 0.15;
+                    p.vx *= 0.98;
+                    p.life--;
+                    p.size *= p.decay;
+
+                    this.ctx.beginPath();
+                    this.ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+                    this.ctx.fillStyle = p.color;
+                    this.ctx.shadowBlur = 10;
+                    this.ctx.shadowColor = p.color;
+                    this.ctx.fill();
+                    this.ctx.shadowBlur = 0;
+
+                    if (p.life <= 0 || p.size < 0.5) {
+                        this.particles.splice(i, 1);
+                    }
+                }
+                
+                requestAnimationFrame(() => this.animate());
+            }
+
+            launch(x, y) {
+                this.createExplosion(x || Math.random() * this.canvas.width, 
+                                   y || Math.random() * this.canvas.height * 0.5 + 100);
+            }
+
+            celebrate() {
+                let count = 0;
+                const interval = setInterval(() => {
+                    this.launch();
+                    this.launch();
+                    count++;
+                    if (count > 15) clearInterval(interval);
+                }, 300);
+            }
+        }
+
+        const fireworks = new Fireworks();
+
+        function launchFireworks() {
+            fireworks.launch(window.innerWidth / 2, window.innerHeight / 2);
+            setTimeout(() => fireworks.launch(), 500);
+            setTimeout(() => fireworks.launch(), 1000);
+        }
+
+        function celebrate() {
+            fireworks.celebrate();
+        }
+
+        // Enter key support
+        document.getElementById('phoneNumber').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') submitNumber();
+        });
+    </script>
+</body>
+</html>
